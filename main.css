@@ -1,0 +1,224 @@
+body {
+  margin: 0;
+  background-color: #222;
+}
+
+.main-game {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.genius {
+  display: grid;
+  grid-template-areas:
+    'verde  vermelho'
+    'amarelo  azul';
+  grid-gap: 20px;
+  border: 25px solid black;
+  border-radius: 100%;
+  background-color: #000;
+  background: -webkit-radial-gradient(#000, rgb(50, 46, 46));
+  width: 700px;
+  height: 700px;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+.title {
+  display: flex;
+  position: absolute;
+  width: 230px;
+  height: 230px;
+  border-radius: 100%;
+  background-color: #000;
+  background: -webkit-radial-gradient(#000, rgb(35, 33, 33));
+  color: white;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+.title h3 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 25px;
+}
+
+div.green {
+  grid-area: verde;
+  background: rgb(62, 194, 62);
+  border-top-left-radius: 100%;
+  cursor: pointer;
+}
+div.blue {
+  grid-area: azul;
+  background: rgb(50, 50, 152);
+  border-bottom-right-radius: 100%;
+  cursor: pointer;
+}
+div.red {
+  grid-area: vermelho;
+  background: rgb(177, 22, 22);
+  border-top-right-radius: 100%;
+  cursor: pointer;
+}
+div.yellow {
+  grid-area: amarelo;
+  background: rgb(169, 169, 37);
+  border-bottom-left-radius: 100%;
+  cursor: pointer;
+}
+/* .active {
+  filter: brightness(280%);
+} */
+.activeG {
+  /* color: green; */
+  filter: brightness(180%);
+  box-shadow: 0 0 15px green, 0 0 25px rgb(30, 206, 30),
+    0 0 30px rgb(25, 181, 25), 0 0 35px rgb(28, 184, 28),
+    0 0 40px rgb(28, 184, 28), 0 0 50px rgb(28, 184, 28);
+}
+.activeR {
+  /* color: red; */
+  filter: brightness(180%);
+  box-shadow: 0 0 15px rgb(221, 28, 28), 0 0 20px rgb(221, 28, 28),
+    0 0 30px rgb(221, 28, 28), 0 0 40px rgb(221, 28, 28),
+    0 0 45px rgb(221, 28, 28), 0 0 50px rgb(221, 28, 28);
+}
+.activeB {
+  /* color: blue; */
+  filter: brightness(180%);
+  box-shadow: 0 0 15px blue, 0 0 20px blue, 0 0 25px blue, 0 0 35px blue,
+    0 0 40px blue, 0 0 50px blue;
+}
+
+.activeY {
+  /* color: yellow; */
+  filter: brightness(180%);
+  box-shadow: 0 0 15px yellow, 0 0 20px yellow, 0 0 25px yellow, 0 0 35px yellow,
+    0 0 40px yellow, 0 0 50px yellow;
+}
+
+.decision {
+  display: none;
+}
+
+.decision.open {
+  display: flex;
+  position: absolute;
+  background-color: rgb(37, 38, 35);
+  border: 1px solid rgb(120, 113, 113);
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 400px;
+  align-items: center;
+  justify-content: space-evenly;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+  z-index: 200;
+  transition: 0.6s;
+}
+.decision h2.titulo {
+  position: absolute;
+  font-size: 50px;
+  top: 1%;
+  color: #fff;
+}
+.decision h2.result {
+  position: absolute;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 30px;
+  top: 25%;
+  left: 27%;
+}
+
+.decision button {
+  width: 150px;
+  height: 150px;
+  margin-top: 150px;
+  border: none;
+  border-radius: 60%;
+  transition: 0.3s;
+}
+.decision button h2 {
+  font-size: 26px;
+}
+.decision button:hover {
+  width: 145px;
+  height: 145px;
+  filter: brightness(120%);
+}
+
+.decision button.continue {
+  background-color: rgb(0, 255, 17, 0.5);
+}
+
+.pontuacao {
+  color: white;
+  position: absolute;
+  right: 100px;
+  top: 100px;
+}
+
+.win {
+  display: none;
+}
+
+.win.open {
+  display: flex;
+  position: absolute;
+  background-color: rgb(37, 38, 35);
+  border: 1px solid rgb(120, 113, 113);
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 400px;
+  align-items: center;
+  justify-content: space-evenly;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+  z-index: 200;
+  transition: 0.6s;
+}
+.win h2.titulo {
+  position: absolute;
+  font-size: 50px;
+  top: -3%;
+  left: auto;
+  color: rgb(218, 213, 213);
+}
+/* .win h2.result {
+  position: absolute;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 30px;
+  top: 25%;
+  left: 27%;
+} */
+
+.win button {
+  width: 150px;
+  height: 150px;
+  border: none;
+  border-radius: 60%;
+  transition: 0.3s;
+  margin: auto auto;
+}
+.win button h2 {
+  font-size: 26px;
+}
+.win button:hover {
+  width: 145px;
+  height: 145px;
+  filter: brightness(120%);
+}
+
+/* .win button.continue {
+  background-color: rgb(0, 255, 17, 0.5);
+} */
+
+/* .pontuacao {
+  color: white;
+  position: absolute;
+  right: 100px;
+  top: 100px;
+} */
